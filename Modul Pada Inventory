@@ -1,0 +1,14 @@
+Modul Pada Inventory Studi Kasus Toko Sepatu Cikupa
+
+1. Master Data 	-> Produk List, Edit, Delete, Update
+				-> Supplier List, Edit, Delete, Update
+				-> Reseller List, Edit, Delete, Update
+				-> Buyer List, Edit, Delete, Update
+
+2. Transaksi	-> Barang Masuk dari Supplier
+				-> Penjualan didalam toko (include struk)
+				-> Penjualan kepada Reseller
+
+3. Laporan		-> Barang Masuk, Penjualan, Income
+
+4. Dashboard	-> Statistik Customable
