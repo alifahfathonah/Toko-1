@@ -66,6 +66,7 @@ class Produk_model extends CI_Model
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
+  
 
 	public function count_all()
 	{

@@ -22,6 +22,38 @@
         </a>
       </li>
       <?php if ($this->ion_auth->is_superadmin()): ?>
+      <li <?php if($this->uri->segment(2)=="laporan"){echo "class='active'";} ?>>
+        <a href="<?php echo base_url('admin/laporan') ?>">
+          <i class="fa fa-save"></i> <span>Laporan</span>
+        </a>
+      </li>
+      <?php endif ?>
+      <li <?php if($this->uri->segment(2) == "produk"){echo "class='active'";} ?>>
+        <a href='#'><i class='fa fa-shopping-cart'></i><span> Produk </span><i class='fa fa-angle-left pull-right'></i></a>
+        <ul class='treeview-menu'>
+          <li <?php if($this->uri->segment(2) == "produk" && $this->uri->segment(3) == "create"){echo "class='active'";} ?>><a href='<?php echo base_url('admin/produk/create') ?>'><i class='fa fa-circle-o'></i> Tambah Produk </a></li>
+          <li <?php if($this->uri->segment(2) == "produk" && $this->uri->segment(3) == ""){echo "class='active'";} ?>><a href='<?php echo base_url('admin/produk') ?>'><i class='fa fa-circle-o'></i> Data Produk </a></li>
+        </ul>
+      </li>
+
+      <li class="header">TOKO</li>
+      <?php if ($this->ion_auth->is_superadmin()): ?>
+      <li>
+        <a href="<?php echo base_url('toko/reseller/transaksi/') ?>">
+          <i class="fa fa-newspaper-o"></i> <span>Katalog Reseller</span>
+        </a>
+      </li>
+      <?php endif ?>
+      <?php if ($this->ion_auth->is_superadmin()): ?>
+      <li>
+        <a href="<?php echo base_url('toko/kasir/transaksi') ?>">
+          <i class="fa fa-calculator"></i> <span>Kasir</span>
+        </a>
+      </li>
+      <?php endif ?>
+
+      <li class="header">TOKO ONLINE</li>
+      <?php if ($this->ion_auth->is_superadmin()): ?>
       <li <?php if($this->uri->segment(2)=="penjualan"){echo "class='active'";} ?>>
         <a href="<?php echo base_url('admin/penjualan') ?>">
           <i class="fa fa-calculator"></i> <span>Penjualan</span>
@@ -36,23 +68,6 @@
       </li>
       <?php endif ?>
 
-      <?php if ($this->ion_auth->is_superadmin()): ?>
-      <li <?php if($this->uri->segment(2) == "blog"){echo "class='active'";} ?>>
-        <a href='#'><i class='fa fa-newspaper-o'></i><span> Blog </span><i class='fa fa-angle-left pull-right'></i></a>
-        <ul class='treeview-menu'>
-          <li <?php if($this->uri->segment(2) == "blog" && $this->uri->segment(3) == "create"){echo "class='active'";} ?>><a href='<?php echo base_url('admin/blog/create') ?>'><i class='fa fa-circle-o'></i> Tambah Blog </a></li>
-          <li <?php if($this->uri->segment(2) == "blog" && $this->uri->segment(3) == ""){echo "class='active'";} ?>><a href='<?php echo base_url('admin/blog') ?>'><i class='fa fa-circle-o'></i> Data Blog </a></li>
-        </ul>
-      </li>
-      <?php endif ?>
-
-      <li <?php if($this->uri->segment(2) == "produk"){echo "class='active'";} ?>>
-        <a href='#'><i class='fa fa-shopping-cart'></i><span> Produk </span><i class='fa fa-angle-left pull-right'></i></a>
-        <ul class='treeview-menu'>
-          <li <?php if($this->uri->segment(2) == "produk" && $this->uri->segment(3) == "create"){echo "class='active'";} ?>><a href='<?php echo base_url('admin/produk/create') ?>'><i class='fa fa-circle-o'></i> Tambah Produk </a></li>
-          <li <?php if($this->uri->segment(2) == "produk" && $this->uri->segment(3) == ""){echo "class='active'";} ?>><a href='<?php echo base_url('admin/produk') ?>'><i class='fa fa-circle-o'></i> Data Produk </a></li>
-        </ul>
-      </li>
       <li <?php if($this->uri->segment(2) == "featured"){echo "class='active'";} ?>>
         <a href='#'><i class='fa fa-star'></i><span> Featured </span><i class='fa fa-angle-left pull-right'></i></a>
         <ul class='treeview-menu'>
@@ -100,14 +115,16 @@
       </li>
 
       <?php if ($this->ion_auth->is_superadmin()): ?>
-      <li <?php if($this->uri->segment(2)=="laporan"){echo "class='active'";} ?>>
-        <a href="<?php echo base_url('admin/laporan') ?>">
-          <i class="fa fa-file"></i> <span>Laporan</span>
-        </a>
+      <li <?php if($this->uri->segment(2) == "blog"){echo "class='active'";} ?>>
+        <a href='#'><i class='fa fa-newspaper-o'></i><span> Blog </span><i class='fa fa-angle-left pull-right'></i></a>
+        <ul class='treeview-menu'>
+          <li <?php if($this->uri->segment(2) == "blog" && $this->uri->segment(3) == "create"){echo "class='active'";} ?>><a href='<?php echo base_url('admin/blog/create') ?>'><i class='fa fa-circle-o'></i> Tambah Blog </a></li>
+          <li <?php if($this->uri->segment(2) == "blog" && $this->uri->segment(3) == ""){echo "class='active'";} ?>><a href='<?php echo base_url('admin/blog') ?>'><i class='fa fa-circle-o'></i> Data Blog </a></li>
+        </ul>
       </li>
       <?php endif ?>
-      <li class="header">SETTING</li>
 
+      <li class="header">SETTING</li>
       <?php if ($this->ion_auth->is_superadmin()): ?>
       <li><a href='<?php echo base_url() ?>admin/company/update/1'> <i class="fa fa-building"></i> <span>Profil Toko</span> </a> </li>
       <?php endif ?>
