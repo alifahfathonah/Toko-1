@@ -33,7 +33,7 @@
 							<div class="logo_container">
 								<div class="logo"><a href=""><?php echo $company->company_name ?></a></div>
 							</div>
-							<div class="footer_title"><?php echo $company->desc_profil ?></div>
+							<div class="footer_title"><?php echo $company->company_footer ?></div>
 							<div class="footer_phone"><?php echo $company->company_phone ?></div>
 							<div class="footer_contact_text">
 								<p><?php echo $company->company_address ?></p>
